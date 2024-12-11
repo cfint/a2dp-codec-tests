@@ -102,7 +102,7 @@ The Apple iPhone AAC encoder appears to be the highest quality codec. No excepti
 
 The LDAC codec in High Quality mode (hq 990/909kbps) is quite good. Quality drops off rapidly in Standard Quality (sq 660/606kbps) and Mobile Quality (mq 330/303kbps).
 
-The more recent implementation of the LDAC decoder (O2C14/libldac-dec) has slightly less noise then the first implementation (hegdi/libldacdec).
+The more recent implementation of the LDAC decoder (O2C14/libldac-dec) has slightly less noise then the first implementation (hegdi/libldacdec). In the test results I refer to O2C14/libldac-dec as `ldacbt`, hegdi/libldacdec as `ldac`.
 
 The aptX codec has a very high noise floor. Especially in the higher frequency ranges. It's uncertain if this is an issue with the encoder and/or decoder. Perhaps some other aptX source devices may provide better results.
 
