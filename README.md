@@ -88,3 +88,20 @@ Multi-tone 20
         (scale 0.2 (hzosc 16000))
         (scale 0.2 (hzosc 17000))
     )
+
+
+## Comments
+
+This is mainly testing playback from Linux (pipewire). Actual Bluetooth hardware A2DP sources may (or may not) have different performance.
+
+The Cookie Bite test sample is intended to test approximately the frequency range of speech (250hz to 8000hz).
+
+The Apple AAC encoder appears to be the highest quality codec. No exceptions. The AAC encoder on Linux (fdk-aac) appears to be very low quality. Worse than SBC.
+
+The LDAC codec in High Quality mode (hq 990/909kbps) is quite good. Quality drops off rapidly in Standard Quality (sq 660/606kbps) and Mobile Quality (mq 330/303kbps).
+
+The more recent implementation of the LDAC decoder (O2C14/libldac-dec) has slightly less noise then the first implementation (hegdi/libldacdec).
+
+The aptX codec has a very high noise floor. Especially in the higher frequency ranges. It's uncertain if this is an issue with the encoder and/or decoder. Perhaps some other aptX source devices may provide better results.
+
+The Opus05 and lc3plus-hr codecs are an invention of Pipewire. These codecs appear to be just okay. Nothing remarkable or terrible.
