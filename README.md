@@ -19,13 +19,15 @@ This documents a procedure for testing the performance of A2DP sink audio codecs
 
 ## Test Procedure
 
-Build a bluetooth speaker using ESP32 and PCM5102A modules. Flash [a2dp sink](https://github.com/cfint/esp32-a2dp-sink) to ESP32 module. Connect 3.5mm cable from PCM5102A module to PC 3.5mm input.
+Build a bluetooth speaker using ESP32 and PCM5102A modules. Flash [a2dp sink](https://github.com/cfint/esp32-a2dp-sink) to ESP32 module. Connect 3.5mm cable from PCM5102A module to the 3.5mm line-in on a PC.
 
-Generate test audio files using Audacity. Use `aplay` to playback audio files. Avoid frontend audio players like VLC which may have post processing effects enabled. At least make sure they are disabled if you must those players.
+Generate test audio files using Audacity. See next section for how to do this.
 
-Select an A2DP codec with your desktop environment sound settings.
+Connect the PC to the ESP32 speaker. Select an A2DP codec on Linux.
 
-Play the audio file while recording line-in with Audacity. Export the audio spectrum to CSV file. `Analyze` > `Plot Spectrum...` > `Export`
+Play the audio file on the PC through Bluetooth while recording line-in with Audacity. Use `aplay` to playback audio files. Avoid frontend audio players like VLC which may have post processing effects enabled. At least make sure they are disabled if you must those players.
+
+Export the recorded audio spectrum to CSV file. `Analyze` > `Plot Spectrum...` > `Export`
 
 Audacity FFT settings:
 
@@ -96,7 +98,7 @@ This is mainly testing playback from Linux (pipewire). Actual Bluetooth hardware
 
 The Cookie Bite test sample is intended to test approximately the frequency range of speech (250hz to 8000hz).
 
-The Apple AAC encoder appears to be the highest quality codec. No exceptions. The AAC encoder on Linux (fdk-aac) appears to be very low quality. Worse than SBC.
+The Apple iPhone AAC encoder appears to be the highest quality codec. No exceptions. The AAC encoder on Linux (fdk-aac) appears to be very low quality. Worse than SBC.
 
 The LDAC codec in High Quality mode (hq 990/909kbps) is quite good. Quality drops off rapidly in Standard Quality (sq 660/606kbps) and Mobile Quality (mq 330/303kbps).
 
