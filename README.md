@@ -21,7 +21,7 @@ This documents a procedure for testing the performance of A2DP sink audio codecs
 
 Build a bluetooth speaker using ESP32 and PCM5102A modules. Flash [a2dp sink](https://github.com/cfint/esp32-a2dp-sink) to ESP32 module. Connect 3.5mm cable from PCM5102A module to PC 3.5mm input.
 
-Generate test audio files unsing Audacity. Use `aplay` to playback audio files. Avoid frontend audio players like VLC which may have post processing effects enabled. At least make sure they are disabled if you must those players.
+Generate test audio files using Audacity. Use `aplay` to playback audio files. Avoid frontend audio players like VLC which may have post processing effects enabled. At least make sure they are disabled if you must those players.
 
 Select an A2DP codec with your desktop environment sound settings.
 
